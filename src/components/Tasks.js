@@ -1,11 +1,19 @@
 import Task from './Task'
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
     return (
         // Empty fragment for parenting element
         <>
             {tasks.map((task) => (
-                <Task key={task.id} task={task}/>
+                // Task from component "Task.js" and task is prop from App i.e. main component
+                // key is mandatory to use with map where a key is a unique identifier for each entry in list/array 
+                // passed in map() function
+                <Task 
+                    key={task.id} 
+                    task={task} 
+                    onDelete={onDelete} 
+                    onToggle={onToggle}
+                />
             ))}
         </>
     )
