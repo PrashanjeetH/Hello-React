@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
-
+import { FaTimesCircle, FaPlusCircle } from 'react-icons/fa'
 
 const Header = ({ title, onAdd, showAdd }) => {
     return (
@@ -9,7 +9,7 @@ const Header = ({ title, onAdd, showAdd }) => {
         {/* using custom props */}
         <Button color={ 
                 showAdd ? 'red' : 'green'} 
-                text={showAdd ? 'Close' : 'Add' } 
+                text={showAdd ? <FaTimesCircle/> : <FaPlusCircle/> } 
                 onClick={onAdd} 
         />
         
